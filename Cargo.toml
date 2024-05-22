@@ -1,0 +1,26 @@
+[package]
+name = "mac_conditions"
+version = "1.0.0"
+authors = ["rep-nop <h13317136163@163.com>"]
+edition = "2021"
+description = "Obtain the MAC address by matching the conditions"
+repository = "https://github.com/spdrwcn/mac_conditions"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+exclude = ["/.github/"]
+keywords = ["mac", "address", "network", "interface", "bluetooth", "conditions"]
+
+
+[dependencies]
+regex = "1.10.4"
+serde = { version = "1", features = ["derive"] }  
+serde_yaml = "0.8"
+
+[profile.release]
+strip = true 
+opt-level = 3
+lto = true
+
+[target.x86_64-pc-windows-gun]
+rustflags = ["-C", "target-feature=+crt-static"]
+
