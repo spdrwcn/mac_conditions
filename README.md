@@ -5,10 +5,10 @@ Supported platforms: Any version of Windows that supports WMIC.
 ## Example
 
 ```yaml
-use mac;
+use mac_conditions;
 
 fn main() {
-    let (wired_mac, wireless_mac, bluetooth_mac) = mac::get_mac_addresses();
+    let (wired_mac, wireless_mac, bluetooth_mac) = mac_conditions::get_mac_addresses();
     println!("wired_mac: {:?}", wired_mac);
     println!("wireless_mac: {:?}", wireless_mac);
     println!("bluetooth_mac: {:?}", bluetooth_mac);
